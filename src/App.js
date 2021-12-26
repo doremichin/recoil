@@ -7,11 +7,10 @@ import {
     useRecoilValue,
 } from 'recoil'
 import CharacterCounter from "./CharacterCounter";
+import {textState} from "./atom";
+import TodoList from "./Todolist/TodoList";
 
-export const textState = atom({
-    key : 'textState',
-    default : ''
-})
+
 export const charCountState = selector({
     key : 'charCountState',
     get: ({get}) => {
@@ -25,7 +24,8 @@ const App = () => {
     return(
         <RecoilRoot>
             <Container>
-                <CharacterCounter/>
+                {/*<CharacterCounter/>*/}
+                <TodoList/>
             </Container>
         </RecoilRoot>
     )

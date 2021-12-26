@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {useRecoilState} from "recoil";
-import {textState} from "./App";
+import {textState} from "./atom";
 
 const TextInput = () => {
     const [text, setText] = useRecoilState(textState)
