@@ -1,5 +1,8 @@
 Library-Practice
 ============
+- Recoil
+- React-Spring
+
 
 #Recoil
 
@@ -63,4 +66,21 @@ function FontButton() {
   );
 }
 
+```
+###Asynchronous
+```javascript
+const currentUserNameQuery = selector({
+  key: 'CurrentUserName',
+  get: async ({get}) => {
+    const response = await myDBQuery({
+      userID: get(currentUserIDState), // currentUserIDState라는 atom의 상태값에 의존
+    });
+    return response.name;
+  },
+});
+
+function CurrentUserInfo() {
+  const userName = useRecoilValue(currentUserNameQuery);
+  return <div>{userName}</div>;
+}
 ```

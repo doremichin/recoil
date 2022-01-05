@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components'
 import ColorButton from "./ColorButton";
-import {useRecoilState, useRecoilValue} from "recoil";
+import {useRecoilValue} from "recoil";
 import {commonState} from "../../../atoms/common.atom";
 
 const Header = () => {

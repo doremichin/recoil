@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {useRecoilValue} from "recoil";
 import {calcIncreaseState} from "../atoms/common.selector";
+import HomeContainer from "../views/Home/containers/HomeContainer";
 
 const Home = () => {
 
@@ -8,7 +9,8 @@ const Home = () => {
 
     return(
         <Container>
-            {currentSize}
+            {/*{currentSize}*/}
+            <HomeContainer/>
         </Container>
     )
 };

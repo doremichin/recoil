@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import styled from 'styled-components'
 import {
     RecoilRoot,
@@ -6,14 +7,11 @@ import {
     useRecoilState,
     useRecoilValue,
 } from 'recoil'
-import CharacterCounter from "./CharacterCounter";
 import {textState} from "./atom";
-import TodoList from "./Todolist/TodoList";
 import Header from "./views/shared/Header";
 import {GlobalStyle} from "./style/GlobalStyle";
 import Home from "./pages/Home";
-import IncreaseButton from "./views/Button/IncreaseButton";
-import ResetButton from "./views/Button/ResetButton";
+import Routes from "./Routes";
 
 
 export const charCountState = selector({
@@ -28,19 +26,16 @@ export const charCountState = selector({
 const App = () => {
     return(
         <RecoilRoot>
-            <GlobalStyle/>
-            <Container>
+            <Suspense fallback={<div>Loading...</div>}>
+                <GlobalStyle/>
                 <Header/>
-                <Home/>
-                <IncreaseButton/>
-                <ResetButton/>
-            </Container>
+                <Routes/>
+            </Suspense>
+
+
         </RecoilRoot>
     )
 };
 
-const Container = styled.div`
-
-`;
 
 export default App;
