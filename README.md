@@ -4,14 +4,14 @@ Library-Practice
 - React-Spring
 
 
-#Recoil
+# Recoil
 
 recoil 주요개념
 - atoms (공유 상태)
 - selectors (순수 함수)
 
 
-###Atoms
+### Atoms
 - useState와 비슷한 기능을 하지만 여러 컴포넌트에서 공유해서 사용 가능함
 ```javascript
 const fontSizeState = atom({
@@ -31,7 +31,7 @@ function FontButton() {
 
 ```
 
-###Selectors
+### Selectors
 - Selector는 atoms나 다른 selectors를 입력으로 받아들이는 순수 함수(pure function)다
 - 컴포넌트들은 selectors를 atoms처럼 구독할 수 있다.
 - get 속성은 계산될 함수로 다른 atom이나 selector에 접근할 수 있고 접근한 atom이나 selector가 업데이트 되면 함수가 다시 실행 된다.
@@ -67,7 +67,7 @@ function FontButton() {
 }
 
 ```
-###Asynchronous
+### Asynchronous
 ```javascript
 const currentUserNameQuery = selector({
   key: 'CurrentUserName',
